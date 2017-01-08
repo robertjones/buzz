@@ -33,7 +33,6 @@
     var button = document.getElementById('button');
     var audio = document.getElementById('audio');
     var p1 = document.getElementById('p1');
-    var bod = document.getElementById('body');
 
     function getRandomArbitrary(min, max) {
       var num = Math.random() * (max - min) + min;
@@ -42,10 +41,12 @@
     function play() {
       audio.play();
       p1.innerHTML = "Time's up!";
+      button.className = "button-primary u-full-width";
     };
     var onClick = function() {
       audio.play();
       p1.innerHTML = "Running...";
+      button.className = "u-full-width";
       setTimeout(play, getRandomArbitrary(1000, 20000));
     };
     button.addEventListener('click', onClick, false);
